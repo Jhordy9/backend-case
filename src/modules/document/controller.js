@@ -38,7 +38,7 @@ DocumentController.get('/', async (req, res) => {
 
 	const documents = await getDocuments(validateQuery.data);
 
-	return res.sendStatus(200);
+	return res.status(200).json(documents);
 });
 
 DocumentAdminController.put('/:documentId', uploadMulter.single('file'), async (req, res) => {

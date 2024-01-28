@@ -8,10 +8,6 @@ const app = express();
 app.use(json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (_req, res) => {
-	res.status(200).send('It works!');
-});
-
 app.use('/', router);
 
 app.use(errorHandler);
